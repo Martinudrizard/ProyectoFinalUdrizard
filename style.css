@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #bfff00;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 80px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+header h1 {
+  margin: 0;
+  text-align: left;
+}
+
+.title-top,
+.title-bottom {
+  display: block;
+}
+
+.header-info {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.info-item {
+  font-size: 20px;
+  color: #333;
+}
+
+.icono-wpp {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.nav-links p {
+  margin: 0 5px;
+  font-size: 25px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links p:hover {
+  color: #007bff;
+}
+
+.nav-links p.active {
+  background-color: #bfff00;
+  border-radius: 5px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  padding-left: 850px;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.search-button {
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.cart-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.contenedor-general {
+  padding-top: 80px;
+  padding-left: 10px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 20px;
+}
+
+.producto {
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover img {
+  transform: scale(1.1);
+}
+
+.producto:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.producto p {
+  margin-top: 10px;
+  font-size: 25px;
+  color: #333;
+}
+
+/* Estilo para el botón de añadir al carrito */
+.btn-carrito {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Para que se ajuste al contenido */
+}
+
+.btn-carrito:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn-carrito:active {
+  background-color: #004494;
+  transform: scale(1);
+}
+
+.btn-carrito:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Añade un efecto de enfoque */
+}
+
+.btn-carrito img {
+  width: 16px; /* Ajustar el tamaño del icono si es necesario */
+  height: auto;
+  vertical-align: middle; /* Alinear verticalmente el icono con el texto */
+  margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+/* Estilos para el carrito */
+main {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #0056b3;
+}
+
+#container-cart {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.producto {
+  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.producto:hover img {
+  transform: scale(1.1);
+}
+
+.producto:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.producto p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.container-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.container-btns button {
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container-btns button:hover {
+  background-color: #0056b3;
+}
+
+.container-btns p {
+  margin: 0 10px;
+  font-size: 1rem;
+  color: #333;
+}
