@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
 
 header {
   background-color: #bfff00;
@@ -78,7 +81,7 @@ header h1 {
 .search-container {
   display: flex;
   align-items: center;
-  padding-left: 850px;
+  padding-left: 600px;
   gap: 10px;
 }
 
