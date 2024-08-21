@@ -3,9 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  overflow-x: hidden;
-}
 
 header {
   background-color: #bfff00;
@@ -269,4 +266,28 @@ h1 {
   margin: 0 10px;
   font-size: 1rem;
   color: #333;
+}
+
+/* Estilos para el carrito */
+#main {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Botón "Seguir comprando" */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #007bff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: white;
+  transition: background-color 0.3s, color 0.3s;
 }

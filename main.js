@@ -1,4 +1,4 @@
-// Header
+// Cargar el encabezado
 const header = document.getElementById("header");
 header.innerHTML = `
   <div class="header-content">
@@ -12,7 +12,7 @@ header.innerHTML = `
       <img src="./iconos/whatsapp.png" class="icono-wpp" alt="Ícono" />
     </div>
     <div class="search-container">
-      <input type="text" placeholder="Escribi tu marca" id="search" class="search-input" />
+      <input type="text" placeholder="Escribí tu marca" id="search" class="search-input" />
       <button class="search-button">Buscar</button>
     </div>
     <div class="cart-icon">
@@ -23,7 +23,7 @@ header.innerHTML = `
   </div>
 `;
 
-// futuros Links
+// Cargar los enlaces de navegación
 const navLinks = document.getElementById("nav-links");
 navLinks.innerHTML = `
   <div class="nav-links">
@@ -35,67 +35,24 @@ navLinks.innerHTML = `
   </div>
 `;
 
-//array
-const paletas = [
-  {
-    id: 1,
-    marca: "adidas",
-    modelo: "METALBONE HRD 3.3",
-    precio: 450,
-    imagen: "./imagenes/adidashrd3.3.jpg",
-  },
-  {
-    id: 2,
-    marca: "adidas",
-    modelo: "METALBONE PRO EDT BY ALE GALAN",
-    precio: 550,
-    imagen: "./imagenes/adidas.2024.jpg",
-  },
-  {
-    id: 3,
-    marca: "nox",
-    modelo: "NOX AT10 GENIUS 18K AGUSTIN TAPIA 2024",
-    precio: 324,
-    imagen: "./imagenes/NOX AT10 GENIUS 18K AGUSTIN TAPIA 2024.jpg",
-  },
-  {
-    id: 4,
-    marca: "nox",
-    modelo: "NOX LA10 BY LEO AUGSBURGER 2024",
-    precio: 219,
-    imagen: "./imagenes/NOX LA10 BY LEO AUGSBURGER 2024.jpg",
-  },
-  {
-    id: 5,
-    marca: "babolat",
-    modelo: "BABOLAT TECHNICAL VIPER JUAN LEBRON 2024",
-    precio: 379.95,
-    imagen: "./imagenes/BABOLAT TECHNICAL VIPER JUAN LEBRON 2024.jpg",
-  },
-  {
-    id: 6,
-    marca: "babolat",
-    modelo: "BABOLAT TECHNICAL VERON JUAN LEBRON 2024",
-    precio: 259.94,
-    imagen: "./imagenes/BABOLAT TECHNICAL VERON JUAN LEBRON 2024.jpg",
-  },
-  {
-    id: 7,
-    marca: "bullpadel",
-    modelo: "BULLPADEL VERTEX 03 2024",
-    precio: 259.94,
-    imagen: "./imagenes/vertex.jpg",
-  },
-  {
-    id: 8,
-    marca: "bullpadel",
-    modelo: "BULLPADEL HACK 03 2024",
-    precio: 259.94,
-    imagen: "./imagenes/neuron.jpg",
-  },
-];
-
-let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+// Cargar productos desde el JSON al iniciar
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("./info.json")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Error en la respuesta de la red");
+      }
+      return response.json();
+    })
+    .then((productos) => {
+      renderProducts(productos);
+      // Guardar los productos en una variable global para usarlos en la búsqueda
+      window.paletas = productos;
+    })
+    .catch((error) => {
+      console.error("Error al cargar el archivo JSON:", error);
+    });
+});
 
 // Renderizar Productos
 const renderProducts = (arrayProductos) => {
@@ -118,11 +75,10 @@ const renderProducts = (arrayProductos) => {
   });
 };
 
-renderProducts(paletas);
-
 // Agregar al Carrito
 const agregarAlCarrito = (id) => {
-  let producto = paletas.find((elemento) => elemento.id === id);
+  let producto = window.paletas.find((elemento) => elemento.id === id);
+  let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
   let productoEnElCarrito = carrito.find((elemento) => elemento.id === id);
 
   if (productoEnElCarrito) {
@@ -148,12 +104,12 @@ const agregarAlCarrito = (id) => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 };
 
-//Búsqueda de Productos
+// Búsqueda de Productos
 const inputSearch = document.getElementById("search");
 if (inputSearch) {
   inputSearch.addEventListener("input", (evento) => {
     let value = evento.target.value.toLowerCase();
-    let arrayFiltrado = paletas.filter(
+    let arrayFiltrado = window.paletas.filter(
       (producto) =>
         producto.marca.toLowerCase().includes(value) ||
         producto.modelo.toLowerCase().includes(value)

@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "marca": "adidas",
+    "modelo": "METALBONE HRD 3.3",
+    "precio": 450,
+    "imagen": "./imagenes/adidashrd3.3.jpg"
+  },
+  {
+    "id": 2,
+    "marca": "adidas",
+    "modelo": "METALBONE PRO EDT BY ALE GALAN",
+    "precio": 550,
+    "imagen": "./imagenes/adidas.2024.jpg"
+  },
+  {
+    "id": 3,
+    "marca": "nox",
+    "modelo": "NOX AT10 GENIUS 18K AGUSTIN TAPIA 2024",
+    "precio": 324,
+    "imagen": "./imagenes/NOX AT10 GENIUS 18K AGUSTIN TAPIA 2024.jpg"
+  },
+  {
+    "id": 4,
+    "marca": "nox",
+    "modelo": "NOX LA10 BY LEO AUGSBURGER 2024",
+    "precio": 219,
+    "imagen": "./imagenes/NOX LA10 BY LEO AUGSBURGER 2024.jpg"
+  },
+  {
+    "id": 5,
+    "marca": "babolat",
+    "modelo": "BABOLAT TECHNICAL VIPER JUAN LEBRON 2024",
+    "precio": 379.95,
+    "imagen": "./imagenes/BABOLAT TECHNICAL VIPER JUAN LEBRON 2024.jpg"
+  },
+  {
+    "id": 6,
+    "marca": "babolat",
+    "modelo": "BABOLAT TECHNICAL VERON JUAN LEBRON 2024",
+    "precio": 259.94,
+    "imagen": "./imagenes/BABOLAT TECHNICAL VERON JUAN LEBRON 2024.jpg"
+  },
+  {
+    "id": 7,
+    "marca": "bullpadel",
+    "modelo": "BULLPADEL VERTEX 03 2024",
+    "precio": 259.94,
+    "imagen": "./imagenes/vertex.jpg"
+  },
+  {
+    "id": 8,
+    "marca": "bullpadel",
+    "modelo": "BULLPADEL HACK 03 2024",
+    "precio": 259.94,
+    "imagen": "./imagenes/neuron.jpg"
+  }
+]
